@@ -1,19 +1,11 @@
 import React from 'react';
 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Text, View} from 'react-native';
 
 const ListView = () => {
   return (
     <View>
-      <Text>Hello World</Text>
+      <Text>Hello World List View</Text>
     </View>
   );
 };
