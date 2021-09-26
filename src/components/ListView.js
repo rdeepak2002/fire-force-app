@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
 
-import {Alert, RefreshControl, ScrollView, Text, View} from 'react-native';
+import {RefreshControl, ScrollView, Text, View} from 'react-native';
 import {getAllFireDevices} from '../api/api';
 import messaging from '@react-native-firebase/messaging';
 

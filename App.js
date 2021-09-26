@@ -15,6 +15,7 @@ import messaging from '@react-native-firebase/messaging';
 import {View, Text} from 'react-native';
 import MapView from './src/components/MapView';
 import {createUserDevice} from './src/api/api';
+import MaterialCommunityIcons from 'react-native-vector-icons/Foundation';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,8 +35,30 @@ async function requestUserPermission() {
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Devices" component={ListView} />
-      <Tab.Screen name="Map" component={MapView} />
+      <Tab.Screen
+        name="Devices"
+        component={ListView}
+        options={{
+          tabBarLabel: 'Devices',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Map"
+        component={MapView}
+        options={{
+          tabBarLabel: 'Map',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons
+              name="magnifying-glass"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
