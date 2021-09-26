@@ -13,7 +13,7 @@ import ListView from './src/components/ListView';
 import {NavigationContainer} from '@react-navigation/native';
 import messaging from '@react-native-firebase/messaging';
 import {View, Text} from 'react-native';
-import MapView from './src/components/MapView';
+import FireDeviceMapView from './src/components/FireDeviceMapView';
 import {createUserDevice} from './src/api/api';
 import MaterialCommunityIcons from 'react-native-vector-icons/Foundation';
 
@@ -25,9 +25,9 @@ async function requestUserPermission() {
     authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
     authStatus === messaging.AuthorizationStatus.PROVISIONAL;
 
-  if (enabled) {
-    console.log('Authorization status:', authStatus);
-  }
+  // if (enabled) {
+  //   console.log('Notifications authorized');
+  // }
 
   return authStatus;
 }
@@ -47,7 +47,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Map"
-        component={MapView}
+        component={FireDeviceMapView}
         options={{
           tabBarLabel: 'Map',
           tabBarIcon: ({color, size}) => (
@@ -71,8 +71,7 @@ const App = () => {
     await messaging().registerDeviceForRemoteMessages();
     const fcmToken = await messaging().getToken();
     if (fcmToken) {
-      console.log(fcmToken);
-      console.log('Your Firebase Token is:', fcmToken);
+      console.log('FCM Token is:', fcmToken);
     } else {
       console.log('Failed', 'No token received');
     }

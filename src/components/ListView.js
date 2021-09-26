@@ -12,7 +12,7 @@ const ListView = () => {
   const fetchDevices = () => {
     getAllFireDevices()
       .then(response => {
-        console.log('list view data', response);
+        // console.log('list view data', response);
         setAllFireDevices(response);
         setRefreshing(false);
       })
@@ -33,7 +33,7 @@ const ListView = () => {
 
   useEffect(() => {
     const unsubscribe = messaging().onMessage(async remoteMessage => {
-      console.log('fcm message arrived', JSON.stringify(remoteMessage));
+      console.log(JSON.stringify(new Date()), ': fcm message arrived');
       fetchDevices();
     });
 
