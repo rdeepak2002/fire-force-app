@@ -1,12 +1,12 @@
 import React from 'react';
 
-import {ScrollView, Text} from 'react-native';
+import {View, Text} from 'react-native';
 
 const MapView = () => {
   return (
-    <ScrollView>
+    <View>
       <Text>Hello World Map View</Text>
-    </ScrollView>
+    </View>
   );
 };
 

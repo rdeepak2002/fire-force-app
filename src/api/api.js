@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-async function createUserDevice() {
+async function createUserDevice(notifificationToken) {
   let data = JSON.stringify({
-    notificationToken: 'someFCMNotificationToken',
+    notificationToken: `${notifificationToken}`,
   });
 
   let config = {
