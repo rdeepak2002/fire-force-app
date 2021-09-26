@@ -33,7 +33,10 @@ const ListView = () => {
 
   useEffect(() => {
     const unsubscribe = messaging().onMessage(async remoteMessage => {
-      console.log(JSON.stringify(new Date()), ': fcm message arrived');
+      console.log(
+        JSON.stringify(new Date()),
+        ': fcm message arrived in list view',
+      );
       fetchDevices();
     });
 
@@ -53,7 +56,7 @@ const ListView = () => {
         const backgroundColors = {
           GOOD: '#deffe0',
           WARN: '#f7ffa1',
-          BAD: '#ffa1a1',
+          BAD: '#ffb8b8',
         };
 
         return (
